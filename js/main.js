@@ -87,6 +87,19 @@ function aplicarMascaraMoedaCalculadora(input) {
   atualizarValor();
 }
 
+function aplicarMascaraCadastro(input) {
+  input.addEventListener("input", () => {
+    let valor = input.value.replace(/\D/g, "").slice(0, 9); // apenas números
+    if (valor.length >= 6) {
+      input.value = valor.replace(/(\d{3})(\d{3})(\d{0,3})/, "$1.$2/$3");
+    } else if (valor.length >= 3) {
+      input.value = valor.replace(/(\d{3})(\d{0,3})/, "$1.$2");
+    } else {
+      input.value = valor;
+    }
+  });
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   const campos = [
     "valorM2TerrenoInformado",
@@ -98,6 +111,9 @@ window.addEventListener("DOMContentLoaded", () => {
     const campo = document.getElementById(id);
     if (campo) aplicarMascaraMoedaCalculadora(campo);
   });
+
+  const cadastroInput = document.getElementById("cadastroImobiliario");
+  if (cadastroInput) aplicarMascaraCadastro(cadastroInput);
 });
 
 function limparCampos() {
@@ -108,7 +124,8 @@ function limparCampos() {
     "valorM2ConstrucaoInformado",
     "valorConstrucaoInformado",
     "tipo",
-    "padrao"
+    "padrao",
+    "cadastroImobiliario"
   ];
   ids.forEach((id) => {
     const campo = document.getElementById(id);
@@ -116,7 +133,7 @@ function limparCampos() {
       if (campo.tagName === "SELECT") {
         campo.selectedIndex = 0;
       } else {
-        campo.value = "0,00";
+        campo.value = "";
         campo.dataset.raw = "0";
       }
     }
