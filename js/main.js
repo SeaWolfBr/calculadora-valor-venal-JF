@@ -73,10 +73,11 @@ function calcularValorVenal() {
 
 // Máscara estilo calculadora para campos de valor
 function aplicarMascaraMoedaCalculadora(input) {
-  input.valorRaw = "0";
+  input.dataset.raw = "0";
 
   const atualizarValor = () => {
-    const valorNumerico = parseInt(input.valorRaw || "0", 10) / 100;
+    const raw = input.dataset.raw || "0";
+    const valorNumerico = parseInt(raw, 10) / 100;
     input.value = valorNumerico.toLocaleString("pt-BR", {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
@@ -89,7 +90,7 @@ function aplicarMascaraMoedaCalculadora(input) {
     input.addEventListener("input", () => {
       let digits = input.value.replace(/\D/g, "");
       if (digits.length > 15) digits = digits.slice(0, 15);
-      input.valorRaw = digits;
+      input.dataset.raw = digits || "0";
       atualizarValor();
     });
   } else {
@@ -97,7 +98,7 @@ function aplicarMascaraMoedaCalculadora(input) {
       if (["Tab", "ArrowLeft", "ArrowRight", "Delete"].includes(e.key)) return;
       e.preventDefault();
 
-      let raw = input.valorRaw;
+      let raw = input.dataset.raw || "0";
 
       if (e.key === "Backspace") {
         raw = raw.slice(0, -1);
@@ -108,7 +109,7 @@ function aplicarMascaraMoedaCalculadora(input) {
       }
 
       if (raw === "") raw = "0";
-      input.valorRaw = raw;
+      input.dataset.raw = raw;
       atualizarValor();
     });
 
