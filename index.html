@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calculadora de Valor Venal do Imóvel (PJF)</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Estilo mínimo (opcional) -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container my-5">
+    <h2 class="text-primary text-uppercase mb-4">Calculadora de Valor Venal do Imóvel (PJF)</h2>
+    <p class="mb-4">Preencha os dados conforme o carnê do IPTU:</p>
+
+    <!-- Terreno -->
+    <div class="row g-3 mb-4">
+      <h5 class="text-muted">1. Terreno</h5>
+
+      <div class="col-md-4">
+        <label for="valorM2TerrenoInformado" class="form-label">Valor do m² (IPTU):</label>
+        <input type="text" class="form-control" id="valorM2TerrenoInformado" placeholder="Ex: 150,00">
+      </div>
+
+      <div class="col-md-4">
+        <label for="valorTerrenoInformado" class="form-label">Valor total do terreno:</label>
+        <input type="text" class="form-control" id="valorTerrenoInformado" placeholder="Ex: 45.000,00">
+      </div>
+
+      <div class="col-md-4">
+        <label for="areaIsotima" class="form-label">Área isótima:</label>
+        <input type="text" class="form-control" id="areaIsotima" placeholder="Ex: CS001">
+      </div>
+    </div>
+
+    <!-- Edificação -->
+<div class="mb-4">
+  <h5 class="text-muted mb-3">2. Edificação</h5>
+  <div class="row g-3 align-items-end">
+    <div class="col-md-3">
+      <label for="valorM2ConstrucaoInformado" class="form-label">Valor do m² da edificação:</label>
+      <input type="text" class="form-control" id="valorM2ConstrucaoInformado" placeholder="Ex: 1.200,00">
+    </div>
+
+    <div class="col-md-3">
+      <label for="valorConstrucaoInformado" class="form-label">Valor total da edificação:</label>
+      <input type="text" class="form-control" id="valorConstrucaoInformado" placeholder="Ex: 80.000,00">
+    </div>
+
+    <div class="col-md-3">
+      <label for="tipo" class="form-label">Tipo de imóvel:</label>
+      <select id="tipo" class="form-select">
+        <option value="">Selecione</option>
+        <option value="APTO">Apto</option>
+        <option value="CASA">Casa</option>
+        <option value="SALA">Sala</option>
+        <option value="LOJA">Loja</option>
+        <option value="TELHEIRO">Telheiro</option>
+        <option value="GALPAO">Galpão</option>
+      </select>
+    </div>
+
+    <div class="col-md-3">
+      <label for="padrao" class="form-label">Padrão:</label>
+      <select id="padrao" class="form-select">
+        <option value="">Selecione</option>
+        <option value="OTIMO">Ótimo</option>
+        <option value="BOM">Bom</option>
+        <option value="REGULAR">Regular</option>
+        <option value="BAIXO">Baixo</option>
+        <option value="POPULAR">Popular</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Botão -->
+    <div class="text-end mb-5">
+      <button onclick="calcularValorVenal()" class="btn btn-primary">Calcular Valor Venal (PJF)</button>
+    </div>
+
+    <!-- Resultado -->
+    <div class="result" id="resultado"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/pgvt.js"></script>
+  <script src="js/tpc.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Bootstrap JS (opcional, mas bom ter) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
