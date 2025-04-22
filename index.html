@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calculadora de Valor Venal do Imóvel (PJF)</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <h2>Calculadora de Valor Venal do Imóvel (PJF)</h2>
+  <p>Preencha os dados conforme o carnê do IPTU:</p>
+
+  <!-- 🟩 1. Dados do Terreno -->
+  <fieldset>
+    <legend>1. Terreno</legend>
+    <label>Valor do m² (IPTU):</label>
+    <input type="number" id="valorM2TerrenoInformado" step="0.01" />
+
+    <label>Valor total do terreno (IPTU):</label>
+    <input type="number" id="valorTerrenoInformado" step="0.01" />
+
+    <label>Área isótima (Ex: CS001):</label>
+    <input type="text" id="areaIsotima" />
+  </fieldset>
+
+  <!-- 🟦 2. Dados da Edificação -->
+  <fieldset>
+    <legend>2. Edificação</legend>
+    <label>Valor do m² da edificação (IPTU):</label>
+    <input type="number" id="valorM2ConstrucaoInformado" step="0.01" />
+
+    <label>Valor da edificação (IPTU):</label>
+    <input type="number" id="valorConstrucaoInformado" step="0.01" />
+
+    <label>Tipo de imóvel:</label>
+<select id="tipo">
+  <option value="APTO">Apto</option>
+  <option value="CASA">Casa</option>
+  <option value="SALA">Sala</option>
+  <option value="LOJA">Loja</option>
+  <option value="TELHEIRO">Telheiro</option>
+  <option value="GALPAO">Galpão</option>
+</select>
+
+    <label>Padrão da construção:</label>
+    <select id="padrao">
+      <option value="OTIMO">Ótimo</option>
+      <option value="BOM">Bom</option>
+      <option value="REGULAR">Regular</option>
+      <option value="BAIXO">Baixo</option>
+      <option value="POPULAR">Popular</option>
+    </select>
+  </fieldset>
+
+  <!-- 🔘 Botão de ação -->
+<button onclick="calcularValorVenal()">Calcular Valor Venal (PJF)</button>
+
+  <!-- 📋 Resultado -->
+  <div class="result" id="resultado"></div>
+
+  <!-- 🧠 Scripts -->
+<script src="js/pgvt.js"></script>
+<script src="js/tpc.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
