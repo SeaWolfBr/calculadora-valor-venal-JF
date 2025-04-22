@@ -4,9 +4,7 @@
   <meta charset="UTF-8" />
   <title>Calculadora de Valor Venal do Imóvel (PJF)</title>
   <link rel="stylesheet" href="css/style.css" />
-
   <style>
-    /* 👇 Campo de valor com largura reduzida */
     .campo-curto {
       width: 120px;
     }
@@ -20,13 +18,13 @@
   <fieldset>
     <legend>1. Terreno</legend>
 
-    <label>Valor do m² (IPTU):</label>
+    <label for="valorM2TerrenoInformado">Valor do m² (IPTU):</label>
     <input type="text" id="valorM2TerrenoInformado" class="campo-curto" />
 
-    <label>Valor total do terreno (IPTU):</label>
+    <label for="valorTerrenoInformado">Valor total do terreno (IPTU):</label>
     <input type="text" id="valorTerrenoInformado" class="campo-curto" />
 
-    <label>Área isótima (Ex: CS001):</label>
+    <label for="areaIsotima">Área isótima (Ex: CS001):</label>
     <input type="text" id="areaIsotima" />
   </fieldset>
 
@@ -34,14 +32,15 @@
   <fieldset>
     <legend>2. Edificação</legend>
 
-    <label>Valor do m² da edificação (IPTU):</label>
+    <label for="valorM2ConstrucaoInformado">Valor do m² da edificação (IPTU):</label>
     <input type="text" id="valorM2ConstrucaoInformado" class="campo-curto" />
 
-    <label>Valor da edificação (IPTU):</label>
+    <label for="valorConstrucaoInformado">Valor da edificação (IPTU):</label>
     <input type="text" id="valorConstrucaoInformado" class="campo-curto" />
 
-    <label>Tipo de imóvel:</label>
+    <label for="tipo">Tipo de imóvel:</label>
     <select id="tipo">
+      <option value="">Selecione</option>
       <option value="APTO">Apto</option>
       <option value="CASA">Casa</option>
       <option value="SALA">Sala</option>
@@ -50,8 +49,9 @@
       <option value="GALPAO">Galpão</option>
     </select>
 
-    <label>Padrão da construção:</label>
+    <label for="padrao">Padrão da construção:</label>
     <select id="padrao">
+      <option value="">Selecione</option>
       <option value="OTIMO">Ótimo</option>
       <option value="BOM">Bom</option>
       <option value="REGULAR">Regular</option>
@@ -66,9 +66,9 @@
   <!-- 📋 Resultado -->
   <div class="result" id="resultado"></div>
 
-  <script src="itbijf/js/pgvt.js"></script>
-  <script src="itbijf/js/tpc.js"></script>
-  <script src="itbijf/js/main.js"></script>
-
+  <!-- 🧠 Scripts -->
+  <script src="js/pgvt.js"></script>
+  <script src="js/tpc.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
