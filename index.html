@@ -20,7 +20,7 @@
 
     <!-- Terreno -->
     <div class="row g-3 mb-4">
-      <h5 class="text-muted">1. Terreno</h5>
+      <h5 class="text-muted">1. Coluna Terreno</h5>
 
       <div class="col-md-4">
         <label for="valorM2TerrenoInformado" class="form-label">Valor do m² (IPTU):</label>
@@ -40,7 +40,7 @@
 
     <!-- Edificação -->
     <div class="mb-4">
-      <h5 class="text-muted mb-3">2. Edificação</h5>
+      <h5 class="text-muted mb-3">2. Coluna Edificação</h5>
       <div class="row g-3 align-items-end">
         <div class="col-md-3">
           <label for="valorM2ConstrucaoInformado" class="form-label">Valor do m² da edificação:</label>
@@ -79,14 +79,36 @@
       </div>
     </div>
 
-    <!-- Botões -->
-    <div class="d-flex justify-content-between gap-3 mt-4 flex-wrap">
-      <button class="btn btn-primary" onclick="calcularValorVenal()">Calcular Valor Venal (PJF)</button>
-      <button class="btn btn-secondary" onclick="limparCampos()">Limpar Campos</button>
-    </div>
+    <!-- Botões de ação com alinhamento e tamanho natural -->
+<div class="row mt-4">
+  <div class="col-md-4 d-flex justify-content-start mb-2 mb-md-0">
+    <button class="btn btn-primary" onclick="calcularValorVenal()">Calcular Valor Venal (PJF)</button>
+  </div>
+
+  <div class="col-md-4 d-flex justify-content-center mb-2 mb-md-0">
+    <button class="btn btn-outline-primary" onclick="window.print()">📄 Imprimir / Salvar PDF</button>
+  </div>
+
+  <div class="col-md-4 d-flex justify-content-end">
+    <button class="btn btn-secondary" onclick="limparCampos()">Limpar Campos</button>
+  </div>
+</div>
+
 
     <!-- Resultado -->
     <div id="resultado" class="mt-4"></div>
+
+<!-- Rodapé institucional -->
+<div class="mt-5 mx-auto text-primary small" style="max-width: 760px; text-align: center;">
+  <p>
+    Esta ferramenta é oferecida como um apoio informativo para a estimativa do valor venal de imóveis com fins de ITBI, conforme critérios utilizados pela Prefeitura de Juiz de Fora.
+    Os dados apresentados têm caráter consultivo e não substituem os valores oficialmente apurados pelo Município.
+  </p>
+  <p>
+    A responsabilidade pela fixação da base de cálculo do ITBI é da Administração Pública, que poderá utilizar o maior valor entre o informado na negociação e o valor venal calculado, conforme prática historicamente adotada.
+  </p>
+</div>
+
   </div>
 
   <!-- Scripts -->
@@ -94,5 +116,8 @@
   <script src="js/tpc.js"></script>
   <script src="js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  
 </body>
 </html>
