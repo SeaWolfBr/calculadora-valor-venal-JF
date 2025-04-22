@@ -60,14 +60,14 @@ function calcularValorVenal() {
   const valorVenalTotal = (valorVenalTerreno + valorVenalConstrucao) * fatorComercializacao;
 
   // Exibição do resultado
-  const resultado = `
-    <h3>Resultado</h3>
-    <p><strong>Valor venal do terreno:</strong> R$ ${valorVenalTerreno.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
-    <p><strong>Valor venal da edificação:</strong> R$ ${valorVenalConstrucao.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
-    <p><strong>Valor venal total:</strong> R$ ${valorVenalTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
-    <hr>
-    <small>Área Isótima: ${areaIsotima}</small>
-  `;
+ const resultado = `
+  <h3>Resultado</h3>
+  <p><strong>Valor venal do terreno:</strong> R$ ${valorVenalTerreno.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
+  <p><strong>Valor venal da edificação:</strong> R$ ${valorVenalConstrucao.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
+  <p><strong>Valor Venal do Imóvel para Fins de ITBI:</strong> R$ ${valorVenalTotal.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
+  <hr>
+  <small>Área Isótima: ${areaIsotima}</small>
+`;
   document.getElementById('resultado').innerHTML = resultado;
 }
 
