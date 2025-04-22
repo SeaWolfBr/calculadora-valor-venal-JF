@@ -73,43 +73,50 @@ function calcularValorVenal() {
 
 // Máscara estilo calculadora para campos de valor
 function aplicarMascaraMoedaCalculadora(input) {
-  input.valorRaw = "0"; // Armazena o número bruto
+  input.valorRaw = "0";
 
-  input.addEventListener("keydown", function (e) {
-    if (["Tab", "ArrowLeft", "ArrowRight", "Delete"].includes(e.key)) return;
-
-    e.preventDefault();
-
-    let raw = input.valorRaw;
-
-    if (e.key === "Backspace") {
-      raw = raw.slice(0, -1);
-    } else if (/\d/.test(e.key)) {
-      if (raw.length < 15) {
-        raw += e.key;
-      }
-    }
-
-    if (raw === "") raw = "0";
-
-    input.valorRaw = raw;
-
-    const valorNumerico = parseInt(raw, 10) / 100;
-
+  const atualizarValor = () => {
+    const valorNumerico = parseInt(input.valorRaw || "0", 10) / 100;
     input.value = valorNumerico.toLocaleString("pt-BR", {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     });
-  });
+  };
 
-  input.addEventListener("paste", (e) => e.preventDefault());
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-  // Inicializa como 0,00
-  input.valorRaw = "0";
-  input.value = "0,00";
+  if (isMobile) {
+    input.addEventListener("input", () => {
+      let digits = input.value.replace(/\D/g, "");
+      if (digits.length > 15) digits = digits.slice(0, 15);
+      input.valorRaw = digits;
+      atualizarValor();
+    });
+  } else {
+    input.addEventListener("keydown", function (e) {
+      if (["Tab", "ArrowLeft", "ArrowRight", "Delete"].includes(e.key)) return;
+      e.preventDefault();
+
+      let raw = input.valorRaw;
+
+      if (e.key === "Backspace") {
+        raw = raw.slice(0, -1);
+      } else if (/\d/.test(e.key)) {
+        if (raw.length < 15) {
+          raw += e.key;
+        }
+      }
+
+      if (raw === "") raw = "0";
+      input.valorRaw = raw;
+      atualizarValor();
+    });
+
+    input.addEventListener("paste", (e) => e.preventDefault());
+  }
+
+  atualizarValor();
 }
-
-// Aplica a máscara em todos os campos de valor
 window.addEventListener("DOMContentLoaded", () => {
   const campos = [
     "valorM2TerrenoInformado",
