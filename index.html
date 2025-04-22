@@ -78,9 +78,11 @@
 
 
     <!-- Botão -->
-    <div class="text-end mb-5">
-      <button onclick="calcularValorVenal()" class="btn btn-primary">Calcular Valor Venal (PJF)</button>
+    <div class="d-flex justify-content-between gap-3 mt-4 flex-wrap">
+      <button class="btn btn-primary" onclick="calcularValorVenal()">Calcular Valor Venal (PJF)</button>
+      <button class="btn btn-secondary" onclick="limparCampos()">Limpar Campos</button>
     </div>
+
 
     <!-- Resultado -->
     <div class="result" id="resultado"></div>
