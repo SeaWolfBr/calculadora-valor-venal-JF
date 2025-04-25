@@ -1,18 +1,56 @@
+/* welp/css/style.css */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
 }
 
-#resultado {
-  background-color: #f8f9fa;
-  border: 1px solid #dee2e6;
-  border-radius: 8px;
-  padding: 20px;
-  margin-top: 30px;
+h2 {
+  font-family: 'Georgia', serif;
+  font-weight: 500;
+  font-size: 1.8rem;
+  color: #222 !important; /* Tom mais escuro e neutro */
+  text-transform: none;   /* Remove o UPPERCASE */
+  margin-bottom: 1rem;
 }
-footer, .disclaimer {
-  border-top: 1px solid #cce;
-  padding-top: 1rem;
-  margin-top: 2rem;
-  font-size: 0.875rem;
-  color: #0d6efd; /* mesma cor do Bootstrap text-primary */
+
+
+label {
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: #111;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #333;
+}
+
+.btn-outline-primary {
+  color: #111;
+  border-color: #111;
+}
+
+.btn-outline-primary:hover {
+  background-color: #111;
+  color: white;
+}
+
+footer.disclaimer {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 3rem;
+}
+footer.disclaimer-box {
+  max-width: 760px;
+  background-color: #f8f9fa;
+  color: #444;
+  padding: 20px 25px;
+  font-size: 0.9rem;
+  border-left: 4px solid #222;
+  border-radius: 4px;
+  text-align: left;
+  line-height: 1.6;
 }

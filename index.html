@@ -9,7 +9,7 @@
 <body>
   <div class="container my-5">
     <h2 class="text-primary text-uppercase mb-4">Calculadora do Valor Venal do Imóvel (PJF)</h2>
-    <p class="mb-4">Preencha os dados conforme o carnê do IPTU:</p>
+    <p class="mb-4">Preencha os dados conforme o espelho do IPTU:</p>
     <!-- Novo campo: Cadastro Imobiliário -->
     <div class="mb-3">
       <label for="cadastroImobiliario" class="form-label">Cadastro Imobiliário:</label>
@@ -20,9 +20,10 @@
 
     <!-- Terreno -->
     <div class="row g-3 mb-4">
-      <h5 class="text-muted">1. Coluna Terreno do espelho do IPTU</h5>
+      <h5 class="text-muted">1. Coluna Terreno (espelho do IPTU)</h5>
 
       <div class="col-md-4">
+        <label for="valorM2TerrenoInformado" class="form-label">Valor do m²:</label>
         <label for="valorM2TerrenoInformado" class="form-label">Valor do m²:</label>
         <input type="text" class="form-control" id="valorM2TerrenoInformado" placeholder="Ex: 150,00">
       </div>
@@ -40,7 +41,7 @@
 
     <!-- Edificação -->
     <div class="mb-4">
-      <h5 class="text-muted mb-3">2. Coluna Edificação do IPTU</h5>
+      <h5 class="text-muted mb-3">2. Coluna Edificação (espelho do IPTU)</h5>
       <div class="row g-3 align-items-end">
         <div class="col-md-3">
           <label for="valorM2ConstrucaoInformado" class="form-label">Valor do m² da edificação:</label>
@@ -99,12 +100,14 @@
     <div id="resultado" class="mt-4"></div>
 
 <!-- Rodapé institucional -->
-<div class="mt-5 mx-auto text-primary small" style="max-width: 760px; text-align: center;">
+<div class="mt-5 mx-auto text-primary small" style="max-width: 760px; text-align: left;">
   <p>
+    1. Esta ferramenta é oferecida como um apoio informativo para a estimativa do valor venal de imóveis com fins de ITBI, conforme critérios utilizados pela Prefeitura de Juiz de Fora.
     1. Esta ferramenta é oferecida como um apoio informativo para a estimativa do valor venal de imóveis com fins de ITBI, conforme critérios utilizados pela Prefeitura de Juiz de Fora.
     Os dados apresentados têm caráter consultivo e não substituem os valores oficialmente apurados pelo Município.
   </p>
   <p>
+    2. A responsabilidade pela fixação da base de cálculo do ITBI é da Administração Pública, que poderá utilizar o maior valor entre o informado na negociação e o valor venal calculado, conforme prática historicamente adotada.
     2. A responsabilidade pela fixação da base de cálculo do ITBI é da Administração Pública, que poderá utilizar o maior valor entre o informado na negociação e o valor venal calculado, conforme prática historicamente adotada.
   </p>
 </div>
